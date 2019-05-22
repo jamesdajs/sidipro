@@ -12,5 +12,11 @@ router.get('/', (req, res, next) => {
       res.render('index', { title: 'Express',data:data});
     })
 });
+router.get('/usuarios',(req,res)=>{
+  Usuario.listarUsuarios()
+  .then(data=>{
+    res.json(data)
+  })
+})
 
 module.exports = router;
