@@ -6,4 +6,9 @@ var connection = mysql.createConnection({
     password : 'fa7XIeagXz',
     port:3306
   });
+  if(!connection.threadId)
+    connection.connect(err=>{
+      if(err) res(err)
+      console.log("conectado")
+});
   module.exports = connection;
