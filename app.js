@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-var whitelist = ['https://sidiprocli.herokuapp.com/','http://localhost:4200/' ]
+var whitelist = ['http://localhost:4200/' ]
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
